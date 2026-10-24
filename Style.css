@@ -1,0 +1,146 @@
+/* ===== Variáveis CSS ===== */
+:root {
+  --cor-primaria: #6c5ce7;
+  --cor-primaria-hover: #4834d4;
+  --cor-fundo: #f0f2f5;
+  --cor-texto: #2d3436;
+  --cor-texto-suave: #636e72;
+  --cor-card: #ffffff;
+  --sombra: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --raio: 16px;
+}
+
+/* ===== Reset básico ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Centralização do cartão na tela ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ===== Cartão ===== */
+.card {
+  background-color: var(--cor-card);
+  width: 100%;
+  max-width: 360px;
+  padding: 32px 24px;
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Avatar circular ===== */
+.card__avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--cor-primaria);
+  margin-bottom: 8px;
+}
+
+/* ===== Nome ===== */
+.card__name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+}
+
+/* ===== Cargo ===== */
+.card__role {
+  font-size: 0.95rem;
+  color: var(--cor-primaria);
+  font-weight: 600;
+}
+
+/* ===== Bio ===== */
+.card__bio {
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+  line-height: 1.5;
+  margin: 4px 0 8px;
+}
+
+/* ===== Tags com flexbox ===== */
+.card__tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px 0 16px;
+}
+
+.card__tags li {
+  background-color: #f0edff;
+  color: var(--cor-primaria);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* ===== Botão ===== */
+.card__btn {
+  display: inline-block;
+  background-color: var(--cor-primaria);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 30px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card__btn:hover {
+  background-color: var(--cor-primaria-hover);
+  transform: scale(1.05);
+}
+
+/* ===== Responsividade: telas abaixo de 480px ===== */
+@media (max-width: 480px) {
+  .card {
+    padding: 24px 16px;
+    border-radius: 12px;
+  }
+
+  .card__avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .card__name {
+    font-size: 1.2rem;
+  }
+
+  .card__btn {
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+  }
+}
